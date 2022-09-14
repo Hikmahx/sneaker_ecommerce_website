@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from sneakers import views as sneakersViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', sneakersViews.home),
 ]
