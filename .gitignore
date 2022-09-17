@@ -7,3 +7,4 @@ __pycache__
 db.sqlite3
 /static
 .DS_Store
+/sneaker_ecommerce_website/static/jstool/node_modules
