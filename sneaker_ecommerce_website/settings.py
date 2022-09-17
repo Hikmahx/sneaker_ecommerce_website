@@ -119,6 +119,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# STATICFILES_DIRS = [
+#  BASE_DIR / 'sneaker_ecommerce_website/static/',
+# ]
+
+STATICFILES_DIRS = [
+ BASE_DIR / "static", 'sneaker_ecommerce_website/static/',
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
