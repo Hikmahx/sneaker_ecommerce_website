@@ -1,0 +1,277 @@
+{% extends 'base.html' %} {% block content %}
+<section
+  class="min-h-[70vh] lg:min-h-[80vh] product-container lg:flex lg:items-center lg:gap-x-12 xl:gap-x-24 lg:px-20 xl:px-40 lg:py-20 lg:m-auto lg:mt-2 lg:max-w-8xl"
+>
+  <h1 class="absolute w-1 h-1 overflow-hidden p-0 -m-1">Product page</h1>
+  <div
+    class="screen modal fade hidden fixed w-full h-full inset-0 outline-none"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <section
+      class="modal-dialog absolute inset-0 flex-col items-end justify-center mt-20 h-screen transition duration-150 ease-in-out"
+    >
+      <div class="container max-w-lg m-auto relative p-3">
+        <span
+          class="close absolute -top-10 right-0 text-4xl leading-0 cursor-pointer text-white hover:text-orange transition-colors"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          ><ion-icon
+            name="close-outline"
+            role="img"
+            class="md hydrated"
+            aria-label="close outline"
+          ></ion-icon
+        ></span>
+        <div class="modal-content">
+          <div
+            class="preview xl:min-w-md max-w-3xl w-[448px] h-[448px] cursor-pointer bg-grayish-blue rounded-2xl mx-auto"
+          >
+            <img
+              alt="product-preview"
+              class="rounded-2xl transition duration-150 ease-in-out w-full h-full object-cover object-bottom"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              src="https://images.unsplash.com/photo-1608383470410-218920ab4fe8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+            />
+          </div>
+          <div class="thumbnails flex max-w-3xl pt-8 justify-between w-100">
+            <div
+              class="cursor-pointer w-22 h-22 rounded-xl relative overflow-hidden bg-white transition-all"
+            >
+              <img
+                class="w-full h-full hover:opacity-80 object-cover"
+                src="https://images.unsplash.com/photo-1608230164697-c791326d284c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2148&amp;q=80"
+                alt="thumbnail"
+              />
+            </div>
+            <div
+              class="cursor-pointer w-22 h-22 rounded-xl relative overflow-hidden bg-white transition-all"
+            >
+              <img
+                class="w-full h-full hover:opacity-80 object-cover"
+                src="https://images.unsplash.com/photo-1608230616491-5d696aa9fe52?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+                alt="thumbnail"
+              />
+            </div>
+            <div
+              class="cursor-pointer w-22 h-22 rounded-xl relative overflow-hidden bg-white transition-all"
+            >
+              <img
+                class="w-full h-full hover:opacity-80 object-cover"
+                src="https://images.unsplash.com/photo-1608379743498-ac08f6d022ba?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+                alt="thumbnail"
+              />
+            </div>
+            <div
+              class="cursor-pointer w-22 h-22 rounded-xl relative overflow-hidden bg-white transition-all border border-orange"
+            >
+              <img
+                class="w-full h-full hover:opacity-80 object-cover opacity-50"
+                src="https://images.unsplash.com/photo-1608383470410-218920ab4fe8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+                alt="thumbnail"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="directions absolute inset-x-0 top-0 mt-3 h-[448px] flex items-center justify-between z-40 -mx-4"
+        >
+          <button class="back-arrow w-14 h-14 bg-white rounded-full">
+            <i
+              class="flex items-center justify-center m-auto text-2xl hover:text-orange"
+              ><ion-icon
+                name="chevron-back-outline"
+                role="img"
+                class="md hydrated"
+                aria-label="chevron back outline"
+              ></ion-icon
+            ></i></button
+          ><button class="next-arrow w-14 h-14 bg-white rounded-full">
+            <i
+              class="flex items-center justify-center m-auto text-2xl hover:text-orange"
+              ><ion-icon
+                name="chevron-forward-outline"
+                role="img"
+                class="md hydrated"
+                aria-label="chevron forward outline"
+              ></ion-icon
+            ></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="mobile-slider lg:hidden">
+    <div class="slider overflow-hidden relative mt-1 bg-grayish-blue">
+      <div
+        class="images flex w-full sm:w-1/2 transition-all"
+        style="transform: translateX(0%)"
+      >
+        <img
+          class="object-cover"
+          src="https://images.unsplash.com/photo-1608230164697-c791326d284c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2148&amp;q=80"
+          alt="slider-img"
+        /><img
+          class="object-cover"
+          src="https://images.unsplash.com/photo-1608230616491-5d696aa9fe52?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+          alt="slider-img"
+        /><img
+          class="object-cover"
+          src="https://images.unsplash.com/photo-1608379743498-ac08f6d022ba?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+          alt="slider-img"
+        /><img
+          class="object-cover"
+          src="https://images.unsplash.com/photo-1608383470410-218920ab4fe8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+          alt="slider-img"
+        />
+      </div>
+      <div
+        class="directions absolute inset-x-0 inset-y-1/2 flex items-center justify-between mx-4"
+      >
+        <button class="back-arrow w-10 h-10 bg-white rounded-full">
+          <i class="flex items-center justify-center m-auto text-lg"
+            ><ion-icon
+              name="chevron-back-outline"
+              role="img"
+              class="md hydrated"
+              aria-label="chevron back outline"
+            ></ion-icon
+          ></i></button
+        ><button class="next-arrow w-10 h-10 bg-white rounded-full">
+          <i class="flex items-center justify-center m-auto text-lg"
+            ><ion-icon
+              name="chevron-forward-outline"
+              role="img"
+              class="md hydrated"
+              aria-label="chevron forward outline"
+            ></ion-icon
+          ></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="destop-preview hidden lg:block">
+    <div
+      class="preview xl:min-w-md max-w-3xl w-[448px] h-[448px] cursor-pointer bg-grayish-blue rounded-2xl mx-auto"
+    >
+      <img
+        alt="product-preview"
+        class="rounded-2xl transition duration-150 ease-in-out w-full h-full object-cover object-bottom"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        src="https://images.unsplash.com/photo-1608383470410-218920ab4fe8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+      />
+    </div>
+    <div class="thumbnails flex max-w-3xl pt-8 justify-between w-100">
+      <div
+        class="cursor-pointer w-22 h-22 rounded-xl relative overflow-hidden bg-white transition-all"
+      >
+        <img
+          class="w-full h-full hover:opacity-80 object-cover"
+          src="https://images.unsplash.com/photo-1608230164697-c791326d284c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2148&amp;q=80"
+          alt="thumbnail"
+        />
+      </div>
+      <div
+        class="cursor-pointer w-22 h-22 rounded-xl relative overflow-hidden bg-white transition-all"
+      >
+        <img
+          class="w-full h-full hover:opacity-80 object-cover"
+          src="https://images.unsplash.com/photo-1608230616491-5d696aa9fe52?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+          alt="thumbnail"
+        />
+      </div>
+      <div
+        class="cursor-pointer w-22 h-22 rounded-xl relative overflow-hidden bg-white transition-all"
+      >
+        <img
+          class="w-full h-full hover:opacity-80 object-cover"
+          src="https://images.unsplash.com/photo-1608379743498-ac08f6d022ba?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+          alt="thumbnail"
+        />
+      </div>
+      <div
+        class="cursor-pointer w-22 h-22 rounded-xl relative overflow-hidden bg-white transition-all border border-orange"
+      >
+        <img
+          class="w-full h-full hover:opacity-80 object-cover opacity-50"
+          src="https://images.unsplash.com/photo-1608383470410-218920ab4fe8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1035&amp;q=80"
+          alt="thumbnail"
+        />
+      </div>
+    </div>
+  </div>
+  <section
+    class="product-details container mx-auto px-6 pt-5 sm:pt-10 lg:pt-5 pb-20 lg:pb-5 lg:pr-0 lg:pl-7 xl:ml-1"
+  >
+    <h2
+      class="company uppercase text-orange font-bold text-sm sm:text-md tracking-wider pb-3 sm:pb-5"
+    >
+      puma
+    </h2>
+    <h3
+      class="product capitalize text-very-dark-blue font-bold text-3xl sm:text-4xl sm:leading-none pb-3"
+    >
+      smash leather perf sneakers
+    </h3>
+    <p class="text-dark-grayish-blue pb-6 lg:py-7 lg:leading-6">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed modi quaerat
+      accusantium temporibus eaque autem minus, hic est! Exercitationem,
+      blanditiis.
+    </p>
+    <div
+      class="amount font-bold flex items-center justify-between lg:flex-col lg:items-start mb-6"
+    >
+      <div class="discount-price items-center flex lg:w-1/3 justify-between">
+        <div class="price text-3xl">$30</div>
+        <div
+          class="discount text-orange bg-pale-orange w-max px-2 rounded mx-5 h-6 lg:mr-0"
+        >
+          45%
+        </div>
+      </div>
+      <div class="original-price text-grayish-blue line-through lg:mt-2">
+        $55
+      </div>
+    </div>
+    <div class="sm:flex lg:mt-8 w-full">
+      <div
+        class="quantity-container w-full bg-light-grayish-blue rounded-lg h-14 mb-4 flex items-center justify-between px-6 lg:px-3 font-bold sm:mr-3 lg:mr-5 lg:w-1/3"
+      >
+        <button
+          class="text-orange text-2xl leading-none font-bold mb-1 lg:mb-2 lg:text-3xl hover:opacity-60"
+        >
+          -</button
+        ><input
+          min="0"
+          max="100"
+          class="quantity focus:outline-none text-dark-blue bg-light-grayish-blue font-bold flex text-center w-full"
+          type="number"
+          name="quantity"
+          aria-label="quantity of products"
+          value="1"
+        /><button
+          class="text-orange text-2xl leading-none font-bold mb-1 lg:mb-2 lg:text-3xl hover:opacity-60"
+        >
+          +
+        </button>
+      </div>
+      <button
+        class="cart w-full h-14 bg-orange rounded-lg lg:rounded-xl mb-2 shadow-orange-shadow shadow-2xl text-white flex items-center justify-center lg:w-3/5 hover:opacity-60"
+      >
+        <i class="cursor-pointer text-white text-xl leading-0 pr-3"
+          ><ion-icon
+            name="cart-outline"
+            role="img"
+            class="md hydrated"
+            aria-label="cart outline"
+          ></ion-icon></i
+        >Add to cart
+      </button>
+    </div>
+  </section>
+</section>
+{% endblock content %}
