@@ -11,5 +11,19 @@ def home(request):
 # get all sneakers
 def get_all_sneakers(request):
   sneakers= Sneaker.objects.all()
+  # object_percentage = Sneaker.objects.all().annotate(difference=F('price') - F('discount_price'))
   print("this is working")
-  return render(request, 'home.html', {'sneakers' : sneakers })
+  # print(Sneaker.objects.all().defer('pk').values()) 
+  print(Sneaker.objects.all().values()) 
+  return render(request, 'home.html', {'sneakers' : sneakers})
+
+
+def get_sneaker_details(request, product_id):
+  sneaker = get_object_or_404(Sneaker, pk=product_id)
+  return render(request, 'productpage.html', {'sneaker' : sneaker})
+
+
+# def error_404(request):
+#   data = {}
+#         # return render(request,'home.html', data)
+#   return HttpResponse("<h1>Hello there!!!</h1>")
