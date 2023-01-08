@@ -1,5 +1,5 @@
 from django.db import models
-
+import math
  
 class SneakerImgs (models.Model):
     # image1 = models.ImageField(upload_to="sneakers/images") or models.URLField()
@@ -73,7 +73,9 @@ class Sneaker(models.Model):
     price = models.FloatField()
     discount_price = models.FloatField()
 
-    
+    def percentage(self):
+        return  math.floor(round((self.price / self.price -   self.discount_price / self.price) *   100, 0))
+
     class Meta:
         verbose_name = "Sneaker"
         verbose_name_plural = "Sneakers"
