@@ -59,7 +59,7 @@ class Sneaker(models.Model):
     company = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     desc = models.TextField()
-    images = models.ForeignKey(SneakerImgs, on_delete=models.CASCADE)
+    imgs = models.ForeignKey(SneakerImgs, on_delete=models.CASCADE)
     alt = models.TextField(default="sneaker image")
     GENDER = [
         ('men', 'men'),
@@ -73,8 +73,16 @@ class Sneaker(models.Model):
     price = models.FloatField()
     discount_price = models.FloatField()
 
+    # GET PERCENTAGE FROM PRICE AND DISCOUNT PRICE
     def percentage(self):
         return  math.floor(round((self.price / self.price -   self.discount_price / self.price) *   100, 0))
+
+    # GET IMAGES IN A LIST
+    def images(self):
+        if self.imgs.image4:
+            return list((self.imgs.image1, self.imgs.image2, self.imgs.image3, self.imgs.image4))
+        else:
+            return list((self.imgs.image1, self.imgs.image2, self.imgs.image3))
 
     class Meta:
         verbose_name = "Sneaker"
